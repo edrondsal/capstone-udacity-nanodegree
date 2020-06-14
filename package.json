@@ -1,0 +1,29 @@
+{
+    "name": "capestone",
+    "version": "0.0.1",
+    "main": "index.js",
+    "scripts": {
+        "unit-test": "jest"
+    },
+    "author": "E. RONDON",
+    "license": "MIT",
+    "description": "Nanodegree Project: CAPSTONE",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.10.2",
+        "@babel/preset-env": "^7.10.2",
+        "babel-jest": "^26.0.1",
+        "babel-loader": "^8.1.0",
+        "jest": "^26.0.1",
+        "regenerator-runtime": "^0.13.5"
+    },
+    "jest": {
+        "rootDir": "src/client"
+    }
+}

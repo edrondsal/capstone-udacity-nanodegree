@@ -24,6 +24,6 @@
         "regenerator-runtime": "^0.13.5"
     },
     "jest": {
-        "rootDir": "src/client"
+        "rootDir": "src"
     }
 }

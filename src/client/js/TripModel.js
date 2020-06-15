@@ -5,6 +5,7 @@ created on: 14/06/20
 last modified: 14/06/20
 Updates:
 14/06/20    File Creation
+15/06/20    Major Version - Unit Test Validated
 author: E. RONDON
 ----------------------------------------------------------*/
 
@@ -27,16 +28,28 @@ function Trip(city,country,departure,arrival, imageUrl,latitude,longitude){
     this.latitude = latitude;
     this.longitude = longitude;
 }
+/**
+* @description Function to test if a photo has been assigned to the trip
+*/
 Trip.prototype.hasImageUrl = function(){
     return this.imageUrl!=undefined && !!this.imageUrl;
 }
+/**
+* @description Function to know how many days remain to the departure date
+*/
 Trip.prototype.remainingDaysToTrip = function(){
     const currentDate = Date.now();
     return Math.round((this.departure - currentDate)/86400000);
 }
+/**
+* @description Function to calculate the duration of the trip in days
+*/
 Trip.prototype.duration = function(){
     return Math.round((this.arrival - this.departure)/86400000);
 }
+/**
+* @description Function returning the title of the type wheather research that can be done
+*/
 Trip.prototype.weatherType = function(){
     const remainingDaysToTrip = this.remainingDaysToTrip();
     if(remainingDaysToTrip>7){
@@ -47,12 +60,18 @@ Trip.prototype.weatherType = function(){
     }
     return `The weather prediction for the next ${this.weatherPredictionLength()} days are`;
 }
+/**
+* @description Function to calculate how many days are needed to forecast with the weather api
+*/
 Trip.prototype.weatherPredictionLength = function(){
     if (this.remainingDaysToTrip()<=1){
         return Math.min(16,this.duration());
     }
     return Math.min(7,this.duration());
 }
+/**
+* @description Function that return the latitude and longiture query for the weathre api
+*/
 Trip.prototype.weatherForecastLatLong = function(){
     return `&lat=${this.latitude}&lon=${this.longitude}`;
 }

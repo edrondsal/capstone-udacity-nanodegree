@@ -1,0 +1,49 @@
+/*--------------------------------------------------------
+Style Sheet for Trip Card component. UDACITY Project - Front End Developper Nanodegree
+version: 0.0.1
+last modified: 20/06/2020
+author: E. RONDON
+----------------------------------------------------------*/
+@use 'theme';
+
+
+.card-container{
+    width: 100%;
+    background-color: white;
+    box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: theme.$border-radius;
+    flex: 1 1 48%;
+    max-width: 48%;
+    margin: theme.$medium-margin 1%;
+}
+
+/*image responsive layout and style*/
+.card-image{
+    width: 100%;
+    height: auto;
+    border-radius: theme.$border-radius theme.$border-radius 0 0;
+}
+
+/*card body*/
+.card-body-container{
+    padding: theme.$min-padding;
+    display: flex;
+    flex-flow: column wrap;
+    font-family: theme.$lato-font;
+
+    h3{
+        font-size: 1.3em;
+        font-weight: 500;
+        color: theme.$primary-color-dark;
+        padding: theme.$min-padding;
+    }
+
+    p{
+        color: theme.$second-text-color;
+        padding: theme.$min-padding;
+        b{
+            color: theme.$primary-color-light;
+        }
+    }
+
+}

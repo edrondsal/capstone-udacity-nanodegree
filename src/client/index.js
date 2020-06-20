@@ -1,0 +1,7 @@
+import './styles/resets.scss'
+import './styles/layout.scss'
+import './styles/header.scss'
+import './styles/buttons.scss'
+import './styles/footer.scss'
+import './styles/dialogs.scss'
+import './styles/trip-card.scss'

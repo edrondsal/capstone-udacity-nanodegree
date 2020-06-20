@@ -1,0 +1,17 @@
+/*--------------------------------------------------------
+Style Sheet for Footer component. UDACITY Project - Front End Developper Nanodegree
+version: 0.0.1
+last modified: 18/06/2020
+author: E. RONDON
+----------------------------------------------------------*/
+@use 'theme';
+
+footer{
+    background-color: theme.$primary-color-dark;
+    color: theme.$text-color;
+    margin: theme.$medium-margin 0 0 0;
+
+    p{
+        color: theme.$text-color;
+    }
+}

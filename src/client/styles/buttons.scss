@@ -1,0 +1,54 @@
+/*--------------------------------------------------------
+Style Sheet for Buttons component. UDACITY Project - Front End Developper Nanodegree
+version: 0.0.1
+last modified: 19/06/2020
+author: E. RONDON
+----------------------------------------------------------*/
+@use 'theme';
+
+.border-button{
+    color: theme.$second-text-color;
+    font-family: theme.$lato-font;
+    background-color: theme.$secondary-color;
+    border-radius: theme.$border-radius;
+    font-weight: 600;
+    padding: theme.$medium-padding theme.$max-padding;
+    margin: theme.$min-margin;
+    border: none;
+    transition: background-color 0.4s ease-in-out;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.2);
+
+    &:focus{
+        outline: none;
+    }
+    &:active{
+        background-color: theme.$secondary-color-dark;
+        box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+    }
+    &:hover{
+        background-color: theme.$secondary-color-dark; 
+    }
+}
+
+.borderless-button{
+    font-family: theme.$lato-font;
+    background-color: white;
+    font-weight: 600;
+    padding: theme.$medium-padding theme.$max-padding;
+    margin: 0 theme.$min-margin;
+    border: none;
+    transition: color 0.4s ease-in-out;
+    color: theme.$primary-color;
+    border: none;
+    &:hover{
+        color: theme.$primary-color-light;
+    }
+    &:focus{
+        outline: none;
+        color: theme.$primary-color-dark;
+    }
+    &:active{
+        color: theme.$primary-color-dark;
+    }
+}
+

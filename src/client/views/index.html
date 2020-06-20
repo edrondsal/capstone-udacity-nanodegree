@@ -1,0 +1,89 @@
+<!--
+Index HTML file for CAPSTONE. UDACITY Project - Front End Developper Nanodegree
+version: 0.0.1
+created on: 18/06/20
+last modified: 18/06/20
+Updates:
+18/06/20    File Creation
+author: E. RONDON
+-->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CAPSTONE</title>
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <!-- Header containing the Navbar of the app-->
+            <header class="header-section-layout header-section-style">
+                <h1>CAPSTONE</h1>
+                <nav id="navigaton-bar">
+                    <ul>
+                        <li><a id="menu-planned-trips" class="navbar-item-style-active" href="#">PLANNED</a></li>
+                        <li><a id="menu-expired-trips" class="navbar-item-style" href="#">EXPIRED</a></li>
+                    </ul>
+                </nav>
+             </header>
+            <!-- input section of the app-->
+            <section class="input-section-layout">
+                <div class="input-flex-container">
+                    <h2>My Trips</h2>
+                    <button id="add-button" class="border-button">Add Trip</button>
+                </div>
+            </section>
+            <!-- trip cards section of the app-->
+            <section class="trip-section-layout">
+                <div id="trip-container" class="trip-flex-container">
+                    <div class="card-container">
+                        <img class="card-image" src="http://i.rtings.com/images/reviews/tv/lg/sj8500/sj8500-35mm-aspect-large.jpg" alt="post image">
+                        <div class="card-body-container">
+                            <h3>Paris - France</h3>
+                            <p>The trip is <b>220</b> days away</p>
+                            <p>Typical weather for then is</p>
+                            <p><b>High:</b>&nbsp35°C&nbsp&nbsp<b>Low:</b>&nbsp20°C</p>
+                            <p>Cloud with some sporadic rains</p>
+                            <button class="borderless-button">REMOVE</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer containing the Navbar of the app-->
+            <footer class="footer-section-layout">
+                <p>© 2020 Copyright: Eduardo Rondon</p>
+            </footer>  
+        </div>
+        <!--Dialog to enter a new trip, it hidden-item at begging becomes dialog-screen when add-button pressed-->
+        <div id="dialog-new-trip" class="hidden-item">
+            <div class="dialog-content">
+                <div class="dialog-row">
+                    <label for="trip-city" class="dialog-labels">Location</label>
+                    <input type="text" class="dialog-input" id="trip-city" placeholder="Enter City Name">
+                </div>
+                <div class="dialog-row">
+                    <label for="trip-departure" class="dialog-labels">Departure</label>
+                    <input type="date" value="2020-06-19" class="dialog-input" id="trip-departure">
+                </div>
+                <div class="dialog-row">
+                    <label for="trip-arrival" class="dialog-labels">Arrival</label>
+                    <input type="date" value="2020-06-19" class="dialog-input" id="trip-arrival">
+                </div>
+                <div class="dialog-button-row">
+                    <button id="dialog-cancel-button" class="borderless-button">CANCEL</button>
+                    <button id="dialog-save-button" class="borderless-button">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <!--Dialog loading after enter a new trip, it hidden-item at begging becomes dialog-screen when dialog-save-button pressed-->
+        <div id="dialog-loading" class="hidden-item">
+            <div class="loading-dialog-content">
+                <div class="loading-spinner"></div>
+                <p>Creating Trip...</p>
+            </div>
+        </div>
+
+    </body>
+</html>

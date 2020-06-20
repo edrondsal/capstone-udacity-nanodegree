@@ -4,7 +4,9 @@
     "main": "index.js",
     "scripts": {
         "unit-test": "jest",
-        "build-dev": "webpack  --config webpack.dev.js"
+        "start": "node src/server/server.js",
+        "build-dev": "webpack  --config webpack.dev.js",
+        "build-dev-server": "webpack-dev-server --config webpack.config.js --open"
     },
     "author": "E. RONDON",
     "license": "MIT",

@@ -76,7 +76,7 @@ describe("Unit Test for TripModel.js", () => {
         departure = dateNow() + (4*86400000);
         arrival= departure + (7*86400000);
         trip = new Trip(undefined,undefined,departure,arrival,undefined,0,0);
-        expect(trip.weatherPredictionLength()).toEqual(7);
+        expect(trip.weatherPredictionLength()).toEqual(0);
 
         departure = dateNow() + (1*86400000);
         arrival= departure + (20*86400000);
@@ -99,7 +99,6 @@ describe("Unit Test for TripModel.js", () => {
 
         departure = dateNow() + (0*86400000);
         arrival= departure + (19*86400000);
-        console.log(trip.remainingDaysToTrip());
         trip = new Trip(undefined,undefined,departure,arrival,undefined,0,0);
         result = 'The weather prediction for the next 16 days are';
         expect(trip.weatherType()).toEqual(result);

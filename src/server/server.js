@@ -85,3 +85,4 @@ function deleteRouteCallback(request, response) {
     response.send(object);
 }
 
+module.exports = server;

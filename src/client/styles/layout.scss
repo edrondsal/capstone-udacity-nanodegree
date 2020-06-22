@@ -7,6 +7,11 @@ author: E. RONDON
 
 @use 'theme';
 
+//Hidden Item
+.hidden-item{
+    display: none;
+}
+
 /*main container with the grid layout of the app*/
 .grid-container{
     width: auto;

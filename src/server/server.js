@@ -30,6 +30,13 @@ app.use(express.static('dist'));
 // designates what port the app will listen to for incoming requests
 const server = app.listen(port,listening);
 
+//Configuration of GET route
+app.get('/trips',getRouteCallback);
+
+//Configuration of POST route
+app.post('/trips', postRouteCallback);
+
+app.delete('/trips', deleteRouteCallback);
 
 /**
  * @description Function working as the callback of the listen function used to create the server
@@ -39,5 +46,42 @@ const server = app.listen(port,listening);
 function listening(){
     console.log(`server running in localhost:${port}`);
 }
-
+/**
+ * @description Function working as the callback of the get route
+ * @since   0.0.1
+ * @access  private
+ * @param   {Request}   request
+ * @param   {Response}  response
+ * @returns {Response}  response containing all trips recorded
+*/
+function getRouteCallback(request, response) {
+    response.send(appTripData)
+}
+/**
+ * @description Function working as the callback of the post route
+ * @since   0.0.1
+ * @access  private
+ * @param   {Request}   request
+ * @param   {Response}  response
+ * @returns {Response}  response
+*/
+function postRouteCallback(request, response) {
+    let object = request.body;
+    appTripData[object.key] = object.data;
+    response.send(object);
+}
+/**
+ * @description Function working as the callback of the delete route
+ * @since   0.0.1
+ * @access  private
+ * @param   {Request}   request
+ * @param   {Response}  response
+ * @returns {Response}  response
+*/
+function deleteRouteCallback(request, response) {
+    const key = request.query.key;
+    const object = appTripData[key];
+    delete appTripData[key];
+    response.send(object);
+}
 

@@ -5,6 +5,7 @@
     "scripts": {
         "unit-test": "jest",
         "start": "node src/server/server.js",
+        "build-prod": "webpack --config webpack.prod.js",
         "build-dev": "webpack  --config webpack.dev.js",
         "build-dev-server": "webpack-dev-server --config webpack.config.js --open"
     },
@@ -25,6 +26,7 @@
         "babel-loader": "^8.1.0",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^3.6.0",
+        "file-loader": "^6.0.0",
         "html-webpack-plugin": "^4.3.0",
         "jest": "^26.0.1",
         "mini-css-extract-plugin": "^0.9.0",

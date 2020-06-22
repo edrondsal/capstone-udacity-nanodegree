@@ -38,17 +38,7 @@ author: E. RONDON
             <!-- trip cards section of the app-->
             <section class="trip-section-layout">
                 <div id="trip-container" class="trip-flex-container">
-                    <div class="card-container">
-                        <img class="card-image" src="http://i.rtings.com/images/reviews/tv/lg/sj8500/sj8500-35mm-aspect-large.jpg" alt="post image">
-                        <div class="card-body-container">
-                            <h3>Paris - France</h3>
-                            <p>The trip is <b>220</b> days away</p>
-                            <p>Typical weather for then is</p>
-                            <p><b>High:</b>&nbsp35°C&nbsp&nbsp<b>Low:</b>&nbsp20°C</p>
-                            <p>Cloud with some sporadic rains</p>
-                            <button class="borderless-button">REMOVE</button>
-                        </div>
-                    </div>
+
                 </div>
             </section>
             <!-- Footer containing the Navbar of the app-->
@@ -60,8 +50,12 @@ author: E. RONDON
         <div id="dialog-new-trip" class="hidden-item">
             <div class="dialog-content">
                 <div class="dialog-row">
-                    <label for="trip-city" class="dialog-labels">Location</label>
+                    <label for="trip-city" class="dialog-labels">City</label>
                     <input type="text" class="dialog-input" id="trip-city" placeholder="Enter City Name">
+                </div>
+                <div class="dialog-row">
+                    <label for="trip-country" class="dialog-labels">Country</label>
+                    <select class="dialog-input" id="trip-country"></select>
                 </div>
                 <div class="dialog-row">
                     <label for="trip-departure" class="dialog-labels">Departure</label>
@@ -84,6 +78,15 @@ author: E. RONDON
                 <p>Creating Trip...</p>
             </div>
         </div>
-
+        <!--ServiceWorker declaration-->
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

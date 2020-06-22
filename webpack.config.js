@@ -25,6 +25,15 @@ module.exports = {
                       implementation: require('sass'),
                     }
                   }]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                exclude: /node_modules/,
+                loader: 'file-loader',
+                options: {
+                  outputPath: 'images',
+                  name: '[name].[ext]'
+                },
             }
         ]
     },

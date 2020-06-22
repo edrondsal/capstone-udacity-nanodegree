@@ -28,7 +28,7 @@ author: E. RONDON
 .card-body-container{
     padding: theme.$min-padding;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     font-family: theme.$lato-font;
 
     h3{
@@ -36,6 +36,7 @@ author: E. RONDON
         font-weight: 500;
         color: theme.$primary-color-dark;
         padding: theme.$min-padding;
+        align-self: center;
     }
 
     p{
@@ -47,3 +48,57 @@ author: E. RONDON
     }
 
 }
+
+.align-end{
+    align-self: flex-end;
+}
+
+/*Weather container*/
+.scrolling-container{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    font-family: theme.$lato-font;
+    margin: theme.$min-margin 0;
+}
+
+.weather-container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: theme.$min-margin theme.$medium-margin;
+
+    h4{
+        font-weight: 500;
+        color: theme.$primary-color-light;
+    }
+
+    img{
+        width: 45px;
+        height: 45px;
+    }
+
+    p{
+        font-weight: 600;
+        color: theme.$secondary-color-dark;
+    }
+
+}
+
+/*layout for devices with width inferior or equal to 600px*/
+@media(max-width:600px){
+    .card-container{
+        flex: 1 1 98%;
+        max-width: 98%;
+        margin: theme.$medium-margin 1%;
+    }
+
+    .scrolling-container::-webkit-scrollbar{
+            display: none;
+    }
+}
+
+/*layour for devices with width between 601px and 900px
+@media(min-width:601px) and (max-width:900px){
+
+}*/

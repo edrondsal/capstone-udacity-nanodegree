@@ -6,8 +6,11 @@ last modified: 14/06/20
 Updates:
 14/06/20    File Creation
 15/06/20    Major Version - Unit Test Validated
+21/06/20    Add weather information
 author: E. RONDON
 ----------------------------------------------------------*/
+
+import { Weather } from './WeatherModel';
 
 /**
 * @description Prototype Constructor of the Trip Model
@@ -27,6 +30,7 @@ function Trip(city,country,departure,arrival, imageUrl,latitude,longitude){
     this.imageUrl = imageUrl;
     this.latitude = latitude;
     this.longitude = longitude;
+    this.weatherData = [];
 }
 /**
 * @description Function to test if a photo has been assigned to the trip
@@ -64,16 +68,45 @@ Trip.prototype.weatherType = function(){
 * @description Function to calculate how many days are needed to forecast with the weather api
 */
 Trip.prototype.weatherPredictionLength = function(){
-    if (this.remainingDaysToTrip()<=1){
-        return Math.min(16,this.duration());
+    const remainingDaysToTrip = this.remainingDaysToTrip();
+    if(remainingDaysToTrip>7){
+        return Math.min(7,this.duration());
     }
-    return Math.min(7,this.duration());
+    if(remainingDaysToTrip>1){
+        return 0;
+    }
+    return Math.min(16,this.duration());   
 }
 /**
-* @description Function that return the latitude and longiture query for the weathre api
+* @description Function that return the latitude and longiture query for the weather api
 */
 Trip.prototype.weatherForecastLatLong = function(){
     return `&lat=${this.latitude}&lon=${this.longitude}`;
+}
+/**
+* @description Function add weatherdata to the trip
+* @param {double} temperature - The mean temperature
+* @param {String} icon - The weather icon code
+* @param {String} code - The weather code
+* @param {String} description - The text weather description
+*/
+Trip.prototype.addWeatherInfo = function(temperature,icon,code,description){
+    const data = new Weather(temperature,icon,code,description);
+    this.weatherData.push(data);
+}
+/**
+* @description Function add weatherdata to the trip
+* @param {Weather} data - The weather object
+*/
+Trip.prototype.addWeatherData = function(data){
+    this.weatherData.push(data);
+}
+/**
+* @description Function add weatherdata to the trip
+* @param {[Weather]} data - The array of weather objects
+*/
+Trip.prototype.setWeatherData = function(data){
+    this.weatherData = data;
 }
 
 export { Trip }
